@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import { defaultTheme } from './themes/defaultTheme';
 import { _buildTheme } from './themeBuilder';
 
@@ -30,8 +30,8 @@ export class ThemeProvider extends React.Component{
 
 class ThemeWrap extends React.Component{
 
-  static context = ThemeContext;
   render() {
+    const context = useContext(ThemeContext);
 
     const { classRef, ...props } = this.props;
 
