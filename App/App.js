@@ -8,6 +8,8 @@ import { enableScreens } from 'react-native-screens';
 
 import Navigation from './Navigation';
 
+import {ThemeProvider } from './Themes';
+
 enableScreens();
 
 export default class App extends React.Component {
@@ -17,9 +19,9 @@ export default class App extends React.Component {
     return (
 
       <NavigationContainer>
-
-        <Navigation />
-
+        <ThemeProvider>
+          <Navigation/>
+        </ThemeProvider>
       </NavigationContainer>
 
     );
