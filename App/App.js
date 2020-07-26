@@ -6,7 +6,11 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { enableScreens } from 'react-native-screens';
 
+import { Provider as PaperProvider } from 'react-native-paper';
+
 import Navigation from './Navigation';
+
+import theme from './theme';
 
 enableScreens();
 
@@ -17,9 +21,9 @@ export default class App extends React.Component {
     return (
 
       <NavigationContainer>
-
-        <Navigation />
-
+        <PaperProvider theme={theme}>
+          <Navigation />
+        </PaperProvider>
       </NavigationContainer>
 
     );
