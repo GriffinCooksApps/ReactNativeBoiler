@@ -9,6 +9,7 @@ import { View } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import VideoScreen from './screens/VideoScreen';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { act } from 'react-test-renderer';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -26,8 +27,10 @@ const Navigation = () => {
         showIcon: true,
         showLabel: false,
         tabStyle: {
-          borderWidth:1, borderBottomEndRadius:15, backgroundColor:'powderblue'
+          // backgroundColor: 'powderblue',
+          borderWidth:0.1, borderColor:'blue', borderBottomEndRadius:20, borderStartWidth:0
         }
+      
       }}
     >
       <Tab.Screen
@@ -35,7 +38,7 @@ const Navigation = () => {
         component={HomeScreen}
         options={{
             tabBarLabel: 'Home',
-            tabBarIcon: (focus, color, size) => { return (<Icon color={ focus ? 'blue': 'red'} name='home' size={20}/>)},
+            tabBarIcon: ({focused, color}) => { return (<Icon color={color} name='home' size={focused? 24: 20}/>)},
           }}
       />
       <Tab.Screen 
@@ -43,7 +46,7 @@ const Navigation = () => {
         component={VideoScreen}
         options={{
             tabBarLabel: 'Video',
-            tabBarIcon: (focus, color, size) => { return (<Icon color={ focus ? 'blue': 'red'} name='videocam' size={20}/>)},
+            tabBarIcon: ({focused, color}) => {return (<Icon color={ color } name='videocam' size={focused? 24: 20}/>)},
           }} />
 
     </Tab.Navigator>
