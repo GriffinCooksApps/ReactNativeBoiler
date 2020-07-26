@@ -10,16 +10,20 @@ import Navigation from './Navigation';
 
 enableScreens();
 
-export default function App() {
-  return (
+export default class App extends React.Component {
 
-    <NavigationContainer>
 
-      <Navigation />
-    
-    </NavigationContainer>
-  
-  );
+  render() {
+    return (
+
+      <NavigationContainer>
+
+        <Navigation />
+
+      </NavigationContainer>
+
+    );
+  }
 }
 
 
@@ -127,5 +131,3 @@ export default function App() {
 //     textAlign: 'right',
 //   },
 // });
-
-export default App;
