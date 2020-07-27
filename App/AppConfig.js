@@ -4,7 +4,7 @@ import React, { createContext } from 'react';
 const defaultConfig = {
   logoURL: "http://harpertasks.com/logo.svg",
   loadingURL: "http://harpertasks.com/Loading.svg",
-  eotwVideoURL: "http://www.youtube.com/watch?v=Z0GFRcFm-aY",
+  eotwVideoURL: "http://www.youtube.com/watch?v=bfyNlISf_No",
 }
 
 export const AppConfigContext = createContext({});

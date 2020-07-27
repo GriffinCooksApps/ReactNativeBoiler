@@ -1,19 +1,32 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { View, Text } from 'react-native';
 import EndOfTheWorld from '../components/media/EndOfTheWorld';
 
 export default class Video extends React.Component {
 
+  constructor(props) {
+    super(props);
+    //Quick hack
+    this.state = { video: EndOfTheWorld, nextBtn:true };
+
+  }
+
+  onClick(e) {
+    this.setState({ video: BluVideo, nextBtn:false });
+  }
+
+
   render() {
+    const {nextBtn, video} = this.state;
+    
+    const VideoRes = this.state.nextBtn 
+      ? (<EndOfTheWorld onClick={this.onClick.bind(this)} />)
+      : (<BluVideo />);    
+
     return (
 
-      <SafeAreaProvider>
-
-        <View style={{flex:1}}>
-          <EndOfTheWorld />
-        </View>
-
+      <SafeAreaProvider style={{ backgroundColor: '#CCCCCC', padding: 5, alignContent: 'center', alignItems: 'center' }}>
+          {VideoRes}
       </SafeAreaProvider>
     );
   }
