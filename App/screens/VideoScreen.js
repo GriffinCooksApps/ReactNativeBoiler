@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { View, Text } from 'react-native';
+import EndOfTheWorld from '../components/media/EndOfTheWorld';
 
 export default class Video extends React.Component {
 
@@ -8,10 +9,10 @@ export default class Video extends React.Component {
     return (
 
       <SafeAreaProvider>
-        <View style={{ flex: 1, backgroundColor: 'white' }}>
-          <Text>Lets watch a video</Text>
-        </View>
 
+        <View style={{flex:1}}>
+          <EndOfTheWorld />
+        </View>
 
       </SafeAreaProvider>
     );

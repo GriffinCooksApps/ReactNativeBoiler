@@ -20,7 +20,8 @@ const Navigation = () => {
   return (
     <Tab.Navigator
       backBehavior="initialRoute"
-
+      swipeVelocityImpact={0.4}
+      timingConfig={{duration: 0.5}}
       tabBarOptions={{
         activeTintColor: theme.colors.accent,
         inactiveTintColor: theme.colors.primary,
@@ -28,7 +29,7 @@ const Navigation = () => {
         showLabel: false,
         tabStyle: {
           // backgroundColor: 'powderblue',
-          borderWidth:0.1, borderColor:'blue', borderBottomEndRadius:20, borderStartWidth:0
+          borderWidth:0.1, borderColor:'blue', borderBottomEndRadius:20, borderStartWidth:0, elevation:3
         }
       
       }}

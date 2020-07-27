@@ -19,7 +19,7 @@ export default class Logo extends React.Component {
     return (
         <AppConfigContext.Consumer>
           {value => (
-            <WebView style={[styles.logo, style]} source={{ uri: value.logoURI }} />
+            <WebView style={[styles.logo, style]} source={{ uri: value.logoURL }} />
           )}
       </AppConfigContext.Consumer>
     );
