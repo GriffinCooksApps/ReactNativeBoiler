@@ -1,4 +1,5 @@
-import { DefaultTheme } from 'react-native-paper';
+import { DefaultTheme } from '@react-navigation/native';
+
 
 
 export default {
@@ -6,6 +7,8 @@ export default {
   colors: {
     ...DefaultTheme.colors,
     primary: '#6699FF',
-    accent: '#3366CC'
+    accent: '#3366CC',
+    card: '#99CCFF',
+    secondary: '#3366CC'
   }
 }

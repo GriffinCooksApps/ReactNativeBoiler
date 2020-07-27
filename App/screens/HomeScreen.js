@@ -1,52 +1,37 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import Logo from '../components/images/Logo';
+import { Card } from 'react-native-elements';
 
 
-// ({ focused, color, size, route }) => {
-//   return {
-  // tabBarAccessibilityLabel
-//   }
-//   return focused ? <Ionicons name='home' size={size} color='black' /> :
-//     <View style={{ width: 24, height: 24, margin: 5 }}>
-//       <Ionicons name='home' size={size} color='red' />
-//       {route > 0 && (
-//         <View
-//           style={{
-//             // On React Native < 0.57 overflow outside of parent will not work on Android, see https://git.io/fhLJ8
-//             position: 'absolute',
-//             right: -6,
-//             top: -3,
-//             backgroundColor: 'red',
-//             borderRadius: 6,
-//             width: 12,
-//             height: 12,
-//             justifyContent: 'center',
-//             alignItems: 'center',
-//           }}
-//         >
-          
-//         </View>
-//       )}
-//     </View>
-  
-// };
+const styles = StyleSheet.create({
+  mainView: {
+    backgroundColor: '#6AF6FF88', 
+    padding: 5, 
+    paddingTop: 10, 
+    width:'100%', 
+    height:'100%', 
+    alignContent:'flex-start', 
+    flexDirection:'column', 
+    borderColor: 'black'
+  },
 
-
-
+});
 
 export default class Home extends React.Component {
 
   render() {
     return (
 
-      <SafeAreaProvider>
-        <View style={{ flex: 1, backgroundColor: 'white', borderColor: 'white' }}>
-          <Text>Welcome</Text>
-        </View>
-
-
-      </SafeAreaProvider>
+      <View style={styles.mainView}>
+        <Cards style={{flex:1}} />
+        {/* <Card style={{flex:1}}> */}
+          {/* <Logo style={{flex:1}}/> */}
+          <View style={{flex:1}} />
+        {/* </Card> */}
+        {/* <card style={{flex:1}} /> */}
+      </View>
     );
   }
 
