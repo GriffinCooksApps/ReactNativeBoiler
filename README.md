@@ -16,3 +16,10 @@ Also note that I do not have a google chrome TV, so I could not test the google 
 There are a lot of little things in the package, and definitely something that needs to probably be cleaned up, when time allows.
 
 '''
+
+
+Note: I am starting this off as a project, since my last template was owned by my previous employer.  I would like to find some common interest and people to help work on it.  We can discuss.
+
+I intend to covert this library to TypeScript, and put a lot more validation behind it.
+My idea is to have multiple common setups in branches to allow you to  merge a few branches for what you need and run with it.
+This way you can avoid making mistakes or having issues editing the various files for builds/etc.  With some of hte more complicated mergers as special branches.
