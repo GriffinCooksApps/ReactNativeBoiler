@@ -1,12 +1,12 @@
 //TODO: Use Axios to load settings from a URL at some point after installing redux or some other store.
 import React, { createContext } from 'react';
 
-const defaultConfig = {
-  logoURI: "http://www.secsoc.org/Logo.svg",
-  loadingURL: "http:www/secsoc.org/Loading.svg"
+const  defaultConfig = {
+  logoURI: "http://harpertasks.com/logo.svg",
+  loadingURL: "http://harpertasks.com/Loading.svg"
 }
 
-export const AppConfigContext = createContext({ defaultConfig });
+export const AppConfigContext = createContext({});
 
 export default AppConfig = (props) => {
 
@@ -14,7 +14,7 @@ export default AppConfig = (props) => {
     <AppConfigContext.Consumer>
       {
         value => {
-          return React.Children.map(props.children, ( (child, i) => {
+          return React.Children.map(props.children, ((child, i) => {
             return React.cloneElement(child, { appData: value });
           }))
         }
@@ -24,6 +24,9 @@ export default AppConfig = (props) => {
 }
 
 export const AppConfiguration = (props) => {
+
+
+ 
 
   return (
     <AppConfigContext.Provider value={defaultConfig} >

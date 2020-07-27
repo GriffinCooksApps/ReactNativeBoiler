@@ -1,4 +1,4 @@
-import { StyleSheet, } from 'react-native';
+import { StyleSheet, Text} from 'react-native';
 import { WebView } from 'react-native-webview';
 import React from 'react';
 import { AppConfigContext } from '../../AppConfig';
@@ -6,17 +6,22 @@ import { AppConfigContext } from '../../AppConfig';
 const styles = StyleSheet.create({
   logo: {
     width: 250,
-    backgroundColor: "rgba(150,190,250,30)",
+    height: 250,
+    backgroundColor: "rgba(0,0,0,0)",
+    shadowColor: '#555555'
   }
 });
 
 export default class Logo extends React.Component {
 
-  // static context = AppConfigContext;
-
   render() {
+    const {style} = this.props;
     return (
-      <WebView style={[styles.logo, this.props.style]} source={{ uri: "http://harpertasks.com/logo.svg" }} />
+        <AppConfigContext.Consumer>
+          {value => (
+            <WebView style={[styles.logo, style]} source={{ uri: value.logoURI }} />
+          )}
+      </AppConfigContext.Consumer>
     );
   }
 
