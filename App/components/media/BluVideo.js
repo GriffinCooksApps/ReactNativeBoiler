@@ -18,10 +18,9 @@ export default class BluVideo extends React.Component {
       <AppConfigContext.Consumer>
         {(value) =>
           <>
-            <VideoPlayer url={value.eotwVideoURL} />
-            <View style={{flex:6, alignItems:'flex-end' }}>
-              <Text>I though you may like some lively.  Sorry if taken poorly.</Text>
-              <Button title='Cast' onClick={this.props.onClick} style={{borderRadius:10}} />   
+            <VideoPlayer url={value.bluVideoURL} style={{ height: '40%' }} play={this.props.play} />
+            <View style={{ flexDirection: 'column', width: '92%', height: '40%', alignItems: 'center', }} >
+              <Button title='Cast URL' style={{ borderRadius: 10 }} />
             </View>
           </>
         }

@@ -8,25 +8,34 @@ var styles = StyleSheet.create({
     position: 'absolute',
     top: 20, left: 0, bottom: 0, right: 0,
   },
+  msg: { fontSize: 25, padding: 20 },
+  button: { width: 100, borderRadius: 10 },
+
+
 });
 
 export default class EndOfTheWorld extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
       <AppConfigContext.Consumer>
         {(value) =>
-          <>
-            <View style={{ flex: 1, flexDirection: 'column' }} >
-              <VideoPlayer url={value.eotwVideoURL} style={{minHeight:400}}/>
-              <View style={{ flexDirection: 'column', width:'92%', alignItems:'center',}} >
-                <Text style={{fontSize:25, padding:20}}>I though you may like some livety.  Sorry if taken poorly.</Text>
-                <Button title='Play Real Video' onClick={this.props.onClick} style={{ width:100, borderRadius: 10 }} />
-              </View>
-              <View style={{ flex: 0.2 }} />
+          <View style={{ flex: 1, flexDirection: 'column', alignItems:'flex-end' }}  >
+
+            <VideoPlayer url={value.eotwVideoURL} style={{ height:400, width:400}} play={this.props.play}/>
+
+            <View style={{ flexDirection: 'column', width: '92%', height:'40%', alignItems: 'center', }} >
+
+              <Text style={styles.msg}>I though you may like some levity... However the only way I could get it to play was full screen.</Text>
+
+              <Button title='Play Real Video' onPress={this.props.onClick} style={styles.button} />
+
             </View>
-          </>
+          </View>
         }
       </AppConfigContext.Consumer>
     )
