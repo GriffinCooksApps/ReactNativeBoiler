@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-native-youtube';
 import { View, Text } from 'react-native';
-
+import App_APIKeys from '../../../APP_APIKeys';
 
 
 export default class YouTubePlayer extends React.Component{
@@ -15,7 +15,7 @@ export default class YouTubePlayer extends React.Component{
     return(
       <View style={{flex:1, backgroundColor:'#888888', alignItems:'center', alignContent:'center'}}>
         <YouTube videoId={id} play fullscreen={false} loop={true} style={{ alignSelf: 'stretch', height: 400, width:400 }} 
-        apiKey='USE YOUR OWN KEY'  />
+        apiKey={App_APIKeys.YouTube}  />
         <Text>Playing: {url} as {id}</Text>
       </View>
     );

@@ -1,3 +1,6 @@
+#So I don't accidentially upload my API key.
+APP_APIKeys.js
+
 # OSX
 #
 .DS_Store
