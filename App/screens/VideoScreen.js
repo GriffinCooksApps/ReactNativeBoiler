@@ -13,7 +13,6 @@ export default class Video extends React.Component {
 
   }
 
-
   onClick(e) {
     this.setState({ video: BluVideo, nextBtn: false });
   }
@@ -21,17 +20,17 @@ export default class Video extends React.Component {
 
   render() {
     const { nextBtn, video } = this.state;
+    const play = true;// his.props.navigation.isFocused();
 
     const VideoRes = this.state.nextBtn
-      ? (<EndOfTheWorld onClick={this.onClick.bind(this)} play={this.props.navigation.isFocused} />)
-      : (<BluVideo play={this.props.navigation.isFocused} />);
+      ? (<EndOfTheWorld onClick={this.onClick.bind(this)} play={play} />)
+      : (<BluVideo play={play} />);
 
     // if ( this.props.navigation.isFocused()  == true ) {
       return (
 
-        <SafeAreaProvider style={{ backgroundColor: '#CCCCCC', padding: 5, alignContent: 'center', alignItems: 'center' }}>
+        <SafeAreaProvider style={{ backgroundColor: '#CCCCCC', padding: 5, alignContent: 'center', alignItems: 'center', width:'100%' }}>
           {VideoRes}
-
         </SafeAreaProvider>
       );
     // }

@@ -4,28 +4,37 @@ import { View, Text } from 'react-native';
 
 import VideoPlayer from 'react-native-video-controls';
 
+export const parseURL = (url) => {
+  const [, id] = url.split(/vimeo.com\//);
+  if (id == null) return null;
+  return id;
+}
+
 
 export default class VimeoPlayer extends React.Component {
 
   constructor(props) {
     super(props);
 
+    React.createRef();
+
     this.state = {
-      vimeoID: this.parseURL(props.url),
-      videoUrl: this.props.VIDURL, 
+      vimeoID: parseURL(props.url),
+      videoUrl: this.props.null,
     }
   }
 
+
   componentDidMount() {
     //I mis having redux.
-    // this.setState.bind(this);
-    // fetch(`https://player.vimeo.com/video/${this.state.vimeoID}/config`)
-    //   .then(res => res.json())
-    //   .them(res => this.setState({
-    //     thumbnailUrl: res.video.thumbs['640'],
-    //     videoUrl: res.request.files.hls.cdns[res.request.files.hls.default_cdn].url,
-    //     video: res.video,
-    //   }));
+    const that = this;
+    fetch(`https://player.vimeo.com/video/${this.state.vimeoID}/config`)
+      .then(res => res.json())
+      .then(res => that.setState({
+        thumbnailUrl: res.video.thumbs['640'],
+        videoUrl: res.request.files.hls.cdns[res.request.files.hls.default_cdn].url,
+        video: res.video,
+      }));
   }
 
   render() {
@@ -33,10 +42,10 @@ export default class VimeoPlayer extends React.Component {
       return (
         <View style={{ flex: 1, backgroundColor: '#888888', alignItems: 'center', alignContent: 'center' }}>
           <VideoPlayer
-            
+
             source={{ uri: this.state.videoUrl }}
             navigator={this.props.navigator}
-            style={{ width: 400, height: 400 }}
+            style={{ flex: 1, width: '100%' }}
           />
         </View>
       )
@@ -46,9 +55,5 @@ export default class VimeoPlayer extends React.Component {
     }
   }
 
-  parseURL(url) {
-    const [, id] = url.split(/vimeo.com\//);
-    if (id == null) return null;
-    return id;
-  }
+
 }

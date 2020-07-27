@@ -14,7 +14,7 @@ export default class VideoPlayer extends React.Component {
     const PlayerType = type || this.getType(url);
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#666666' }} >
+      <View style={{ flex: 1, width:'100%', backgroundColor: '#666666' }} >
         <PlayerType {...this.props} />
       </View>
     )
