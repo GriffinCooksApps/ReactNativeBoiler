@@ -95,6 +95,12 @@ android {
         }
     }
     signingConfigs {
+        release{
+            storeFile file('haper.keystore')
+            storePassword 'WouldYouLikeToKnow'
+            keyAlias 'demo'
+            keyPassword 'WouldYouLikeToKnow'
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
