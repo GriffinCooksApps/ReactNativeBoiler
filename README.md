@@ -6,8 +6,6 @@ I tried to use a template, and install the obvious components, vimeo, googlecast
 Something crashed it all, so I decided to build from the ground up adding a layer at a time to figure it out.
 
 In the end I had to find a way around vimeo, and for the sake of deadlines, there are still lots of issues.
-1) The video starts right away on start up.
-2) Probably other things as well...
 
 ...
 
@@ -16,3 +14,10 @@ Also note that I do not have a google chrome TV, so I could not test the google 
 There are a lot of little things in the package, and definitely something that needs to probably be cleaned up, when time allows.
 
 '''
+
+## Additional notes
+
+This was relatively thrown together.  I didn't use proptypes for property checking, or document the code very well.  I also have a lot to clean up.
+However with the timeline presented, and the issues I am sure you expected, the goal was to get it working.
+
+And yes the video starting on launch is an undocumented feature.
