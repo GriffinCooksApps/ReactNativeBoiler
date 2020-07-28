@@ -21,3 +21,9 @@ This was relatively thrown together.  I didn't use proptypes for property checki
 However with the timeline presented, and the issues I am sure you expected, the goal was to get it working.
 
 And yes the video starting on launch is an undocumented feature.
+
+Note: I am starting this off as a project, since my last boiler plate was owned by my previous employer.  I would like to find some common interest and people to help work on it.  We can discuss.
+
+I intend to covert this library to TypeScript, and put a lot more validation behind it.
+My idea is to have multiple common setups in branches to allow you to  merge a few branches for what you need and run with it.
+This way you can avoid making mistakes or having issues editing the various files for builds/etc.  With some of hte more complicated mergers as special branches.
