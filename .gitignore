@@ -21,6 +21,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+APP_APIKeys.js
 # Android/IntelliJ
 #
 build/
