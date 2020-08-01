@@ -97,9 +97,9 @@ android {
     signingConfigs {
         release{
             storeFile file('haper.keystore')
-            storePassword 'WouldYouLikeToKnow'
+            storePassword 'Griffin3!'
             keyAlias 'demo'
-            keyPassword 'WouldYouLikeToKnow'
+            keyPassword 'Griffin3!'
         }
         debug {
             storeFile file('debug.keystore')

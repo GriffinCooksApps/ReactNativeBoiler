@@ -4,8 +4,6 @@ import { AppConfigContext } from '../../AppConfig';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 import GoogleCast, { CastButton } from 'react-native-google-cast';
 import {parseURL} from '../VideoPlayer/VimeoPlayer';
-import WebView from 'react-native-webview';
-import Resume from '../../../assets/html/StevenCook.html';
 
 var styles = StyleSheet.create({
   video: {

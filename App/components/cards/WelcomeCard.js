@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, } from 'react-native';
 import { Card } from 'react-native-elements';
-import RHLogo from '../../../assets/images/RHLogo.png';
+import RHLogo from '../images/RHLogo.png';
 import GriffinCard from './GriffinCard'; 
 
 
